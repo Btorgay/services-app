@@ -7,10 +7,75 @@
 <h:head>
 </h:head>
 <h:body>
-	<h1>Hello World PrimeFaces</h1>
+	<h1>#{welcomePageBean.welcomeMessage}</h1>
 
 	<h:form>
-	   <p:editor value="#{welcomePageBean.welcomeMessage}" />
+		<table>
+			<tr>
+				<td><p:outputLabel value="Servisin Adı: " /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.carNickname}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="Servisin Plakası: " /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.carPlate}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="Servis Güzergahı: " /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.carDestination}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="Servis Güzergah Detayı: " /></td>
+				<td><p:inputTextarea style="width:500"
+						value="#{welcomePageBean.carDefinition.carDestinationDetail}" />
+				</td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="Servisin Durağı: " /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.carStation}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="Servisin Durak Tarifi: " /></td>
+				<td><p:inputTextarea  style="width:500"
+						value="#{welcomePageBean.carDefinition.carStationDetail}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="Servisin Koltuk Kapasitesi: " /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.totalPassangerSeats}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="Servisteki Yolcu Sayısı: " /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.currentTotalPassangers}" />
+				</td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="Servisteki Müsait Koltuk Sayısı " /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.remainingSeats}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="Servisin Duraktan Ayrılış Saati: " /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.carDepartureTime}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel
+						value="Servisin Son Durağa Tahmini Varış Saati: " /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.carEstimatedArrivalTime}" />
+				</td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="Servis Başlangıç Tarihi " /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.creationDate}" /></td>
+			</tr>
+		</table>
 	</h:form>
 
 </h:body>
