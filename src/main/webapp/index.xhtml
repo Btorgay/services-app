@@ -25,10 +25,6 @@
 		</h:panelGrid>
 
 
-
-
-
-
 		<p:dataTable var="car" value="#{welcomePageBean.carsList}"
 			selection="true">
 			<p:column headerText="#{msg['car.carNickname']}">
@@ -84,15 +80,15 @@
 			</tr>
 			<tr>
 				<td><p:outputLabel value="#{msg['car.currentTotalPassangers']}" /></td>
-				<td><p:inputText size="50"
+				<td><p:inputText disabled="true" size="50"
 						value="#{welcomePageBean.carDefinition.currentTotalPassangers}" />
 				</td>
 			</tr>
-			<!-- 			<tr>
+			<tr>
 				<td><p:outputLabel value="#{msg['car.remainingSeats']}" /></td>
-				<td><p:inputText size="50"
+				<td><p:inputText disabled="true" size="50"
 						value="#{welcomePageBean.carDefinition.remainingSeats}" /></td>
-			</tr> -->
+			</tr>
 			<tr>
 				<td><p:outputLabel value="#{msg['car.carDepartureTime']}" /></td>
 				<td><p:inputText size="50"
@@ -105,11 +101,13 @@
 						value="#{welcomePageBean.carDefinition.carEstimatedArrivalTime}" />
 				</td>
 			</tr>
-			<!-- 			<tr>
+			<tr>
 				<td><p:outputLabel value="#{msg['car.creationDate']}" /></td>
-				<td><p:inputText size="50"
-						value="#{welcomePageBean.carDefinition.creationDate}" /></td>
-			</tr> -->
+				<td><h:outputText
+						value="#{welcomePageBean.carDefinition.creationDate}">
+						<f:convertDateTime pattern="MM/dd/yyyy hh:mm a" />
+					</h:outputText></td>
+			</tr>
 		</table>
 
 	</h:form>
