@@ -7,91 +7,109 @@
 <h:head>
 </h:head>
 <h:body>
-	<h1>#{welcomePageBean.welcomeMessage}</h1>
+
 
 	<h:form>
-	
-	
-		<p:dataTable var="car" value="#{welcomePageBean.carsList}" selection="true">
-			<p:column headerText="Araç Adı">
+
+		<h:panelGrid columns="2" width="100%">
+			<h1>#{msg['welcome']}</h1>
+
+			<h:panelGrid style="align:right" columns="2">
+				<p:outputLabel style="font-weight:bold" value="#{msg['language']}" />
+				<h:selectOneMenu value="#{language.localeCode}" onchange="submit()"
+					valueChangeListener="#{language.countryLocaleCodeChanged}">
+					<f:selectItems value="#{language.countriesInMap}" />
+				</h:selectOneMenu>
+			</h:panelGrid>
+
+		</h:panelGrid>
+
+
+
+
+
+
+		<p:dataTable var="car" value="#{welcomePageBean.carsList}"
+			selection="true">
+			<p:column headerText="#{msg['car.carNickname']}">
 				<p:outputLabel value="#{car.carNickname}" />
 			</p:column>
 
-			<p:column headerText="Araç Plakası">
+			<p:column headerText="#{msg['car.carPlate']}">
 				<p:outputLabel value="#{car.carPlate}" />
 			</p:column>
 
-			<p:column headerText="Araç Güzergahı">
+			<p:column headerText="#{msg['car.carDestination']}">
 				<p:outputLabel value="#{car.carDestination}" />
 			</p:column>
 		</p:dataTable>
-		
-		
-		<table>
+
+
+		<table style="margin-top: 50px;">
 			<tr>
-				<td><p:outputLabel value="Servisin Adı: " /></td>
+				<td><p:outputLabel value="#{msg['car.carNickname']}" /></td>
 				<td><p:inputText size="50"
 						value="#{welcomePageBean.carDefinition.carNickname}" /></td>
 			</tr>
 			<tr>
-				<td><p:outputLabel value="Servisin Plakası: " /></td>
+				<td><p:outputLabel value="#{msg['car.carPlate']}" /></td>
 				<td><p:inputText size="50"
 						value="#{welcomePageBean.carDefinition.carPlate}" /></td>
 			</tr>
 			<tr>
-				<td><p:outputLabel value="Servis Güzergahı: " /></td>
+				<td><p:outputLabel value="#{msg['car.carDestination']}" /></td>
 				<td><p:inputText size="50"
 						value="#{welcomePageBean.carDefinition.carDestination}" /></td>
 			</tr>
 			<tr>
-				<td><p:outputLabel value="Servis Güzergah Detayı: " /></td>
+				<td><p:outputLabel value="#{msg['car.carDestinationDetail']}" /></td>
 				<td><p:inputTextarea style="width:500"
 						value="#{welcomePageBean.carDefinition.carDestinationDetail}" />
 				</td>
 			</tr>
 			<tr>
-				<td><p:outputLabel value="Servisin Durağı: " /></td>
+				<td><p:outputLabel value="#{msg['car.carStation']}" /></td>
 				<td><p:inputText size="50"
 						value="#{welcomePageBean.carDefinition.carStation}" /></td>
 			</tr>
 			<tr>
-				<td><p:outputLabel value="Servisin Durak Tarifi: " /></td>
+				<td><p:outputLabel value="#{msg['car.carStationDetail']}" /></td>
 				<td><p:inputTextarea style="width:500"
 						value="#{welcomePageBean.carDefinition.carStationDetail}" /></td>
 			</tr>
 			<tr>
-				<td><p:outputLabel value="Servisin Koltuk Kapasitesi: " /></td>
+				<td><p:outputLabel value="#{msg['car.totalPassangerSeats']}" /></td>
 				<td><p:inputText size="50"
 						value="#{welcomePageBean.carDefinition.totalPassangerSeats}" /></td>
 			</tr>
 			<tr>
-				<td><p:outputLabel value="Servisteki Yolcu Sayısı: " /></td>
+				<td><p:outputLabel value="#{msg['car.currentTotalPassangers']}" /></td>
 				<td><p:inputText size="50"
 						value="#{welcomePageBean.carDefinition.currentTotalPassangers}" />
 				</td>
 			</tr>
-			<tr>
-				<td><p:outputLabel value="Servisteki Müsait Koltuk Sayısı " /></td>
+			<!-- 			<tr>
+				<td><p:outputLabel value="#{msg['car.remainingSeats']}" /></td>
 				<td><p:inputText size="50"
 						value="#{welcomePageBean.carDefinition.remainingSeats}" /></td>
-			</tr>
+			</tr> -->
 			<tr>
-				<td><p:outputLabel value="Servisin Duraktan Ayrılış Saati: " /></td>
+				<td><p:outputLabel value="#{msg['car.carDepartureTime']}" /></td>
 				<td><p:inputText size="50"
 						value="#{welcomePageBean.carDefinition.carDepartureTime}" /></td>
 			</tr>
 			<tr>
 				<td><p:outputLabel
-						value="Servisin Son Durağa Tahmini Varış Saati: " /></td>
+						value="#{msg['car.carEstimatedArrivalTime']}" /></td>
 				<td><p:inputText size="50"
 						value="#{welcomePageBean.carDefinition.carEstimatedArrivalTime}" />
 				</td>
 			</tr>
-			<tr>
-				<td><p:outputLabel value="Servis Başlangıç Tarihi " /></td>
+			<!-- 			<tr>
+				<td><p:outputLabel value="#{msg['car.creationDate']}" /></td>
 				<td><p:inputText size="50"
 						value="#{welcomePageBean.carDefinition.creationDate}" /></td>
-			</tr>
+			</tr> -->
 		</table>
 
 	</h:form>

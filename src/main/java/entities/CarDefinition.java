@@ -3,6 +3,7 @@
  */
 package entities;
 
+import java.io.Serializable;
 import java.security.Timestamp;
 import java.util.Date;
 
@@ -10,8 +11,11 @@ import java.util.Date;
  * @author burak.torgay
  * 
  */
-public class CarDefinition {
-
+public class CarDefinition implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
+	
 	/** name to be seen on the UI */
 	private String carNickname;
 	/** the unique identifier of the car */

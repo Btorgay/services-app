@@ -1,5 +1,6 @@
 package beans;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,9 +12,10 @@ import entities.CarDefinition;
 
 @ManagedBean(name = "welcomePageBean")
 @ViewScoped
-public class WelcomePageBean {
+public class WelcomePageBean implements Serializable{
 
-	private String welcomeMessage = "Welcome To Services Application";
+	private static final long serialVersionUID = 1L;	
+	
 	private CarDefinition carDefinition;
 	private CarDefinition carDefinition2;
 	private CarDefinition carDefinition3;
@@ -32,14 +34,6 @@ public class WelcomePageBean {
 		carsList.add(carDefinition2);
 		carsList.add(carDefinition3);
 		carsList.add(carDefinition4);
-	}
-
-	public String getWelcomeMessage() {
-		return welcomeMessage;
-	}
-
-	public void setWelcomeMessage(String welcomeMessage) {
-		this.welcomeMessage = welcomeMessage;
 	}
 
 	public CarDefinition getCarDefinition() {
