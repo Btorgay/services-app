@@ -72,10 +72,11 @@ public class CarDefinition {
 	/**
 	 * Default Constructor for trial
 	 */
-	public CarDefinition() {
-		carNickname = "TrialCar";
-		carPlate = "34 ABC 9999";
-		carDestination = "Avrupa Tem Konutlarý";
+	public CarDefinition(String carNickname, String carPlate,
+			String carDestination) {
+		this.carNickname = carNickname;
+		this.carPlate = carPlate;
+		this.carDestination = carDestination;
 		carDestinationDetail = "Galatasaray TT Arena'dan 7KM sonra Gaziosmanpaþa'ya dönüldüðünde soldaki bloklar";
 		carStation = "Gebze - Yapý Kredi Bankacýlýk Üssü Önü";
 		carStationDetail = "Üssün ön tarafýndaki güvenlik klübesinin önünden kalkar";

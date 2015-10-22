@@ -10,6 +10,23 @@
 	<h1>#{welcomePageBean.welcomeMessage}</h1>
 
 	<h:form>
+	
+	
+		<p:dataTable var="car" value="#{welcomePageBean.carsList}" selection="true">
+			<p:column headerText="Araç Adı">
+				<p:outputLabel value="#{car.carNickname}" />
+			</p:column>
+
+			<p:column headerText="Araç Plakası">
+				<p:outputLabel value="#{car.carPlate}" />
+			</p:column>
+
+			<p:column headerText="Araç Güzergahı">
+				<p:outputLabel value="#{car.carDestination}" />
+			</p:column>
+		</p:dataTable>
+		
+		
 		<table>
 			<tr>
 				<td><p:outputLabel value="Servisin Adı: " /></td>
@@ -39,7 +56,7 @@
 			</tr>
 			<tr>
 				<td><p:outputLabel value="Servisin Durak Tarifi: " /></td>
-				<td><p:inputTextarea  style="width:500"
+				<td><p:inputTextarea style="width:500"
 						value="#{welcomePageBean.carDefinition.carStationDetail}" /></td>
 			</tr>
 			<tr>
@@ -76,6 +93,7 @@
 						value="#{welcomePageBean.carDefinition.creationDate}" /></td>
 			</tr>
 		</table>
+
 	</h:form>
 
 </h:body>
