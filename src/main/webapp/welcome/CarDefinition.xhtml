@@ -1,0 +1,83 @@
+<!-- For now this page is page is not being used. Instead of this page, Dialog box was created within the index.html -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<body>
+
+		<table style="margin-top: 50px;">
+			<tr>
+				<td><p:outputLabel value="#{msg['car.carNickname']}" /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.carNickname}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="#{msg['car.carPlate']}" /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.carPlate}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="#{msg['car.carDestination']}" /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.carDestination}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="#{msg['car.carDestinationDetail']}" /></td>
+				<td><p:inputTextarea style="width:500"
+						value="#{welcomePageBean.carDefinition.carDestinationDetail}" />
+				</td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="#{msg['car.carStation']}" /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.carStation}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="#{msg['car.carStationDetail']}" /></td>
+				<td><p:inputTextarea style="width:500"
+						value="#{welcomePageBean.carDefinition.carStationDetail}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="#{msg['car.totalPassangerSeats']}" /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.totalPassangerSeats}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="#{msg['car.currentTotalPassangers']}" /></td>
+				<td><p:inputText disabled="true" size="50"
+						value="#{welcomePageBean.carDefinition.currentTotalPassangers}" />
+				</td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="#{msg['car.remainingSeats']}" /></td>
+				<td><p:inputText disabled="true" size="50"
+						value="#{welcomePageBean.carDefinition.remainingSeats}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="#{msg['car.carDepartureTime']}" /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.carDepartureTime}" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel
+						value="#{msg['car.carEstimatedArrivalTime']}" /></td>
+				<td><p:inputText size="50"
+						value="#{welcomePageBean.carDefinition.carEstimatedArrivalTime}" />
+				</td>
+			</tr>
+			<tr>
+				<td><p:outputLabel value="#{msg['car.creationDate']}" /></td>
+				<td><h:outputText
+						value="#{welcomePageBean.carDefinition.creationDate}">
+						<f:convertDateTime pattern="MM/dd/yyyy hh:mm a" />
+					</h:outputText></td>
+			</tr>
+		</table>
+
+</body>
+</html>

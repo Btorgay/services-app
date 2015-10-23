@@ -1,0 +1,21 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:panelGrid columns="2" width="100%">
+		<h1>#{msg['welcome']}</h1>
+
+		<h:panelGrid style="align:right" columns="2">
+			<p:outputLabel style="font-weight:bold" value="#{msg['language']}" />
+			<h:selectOneMenu value="#{language.localeCode}" onchange="submit()"
+				valueChangeListener="#{language.countryLocaleCodeChanged}">
+				<f:selectItems value="#{language.countriesInMap}" />
+			</h:selectOneMenu>
+		</h:panelGrid>
+
+	</h:panelGrid>
+	
+	<p:separator style="margin-bottom:50px;"/>
+</ui:composition>
