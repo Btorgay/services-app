@@ -1,5 +1,5 @@
 /**
- * 
+ * This file is controlling the startup process of the application after the server comes up status
  */
 package system;
 
