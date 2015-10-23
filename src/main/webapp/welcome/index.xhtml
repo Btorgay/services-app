@@ -1,0 +1,103 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+
+
+	<h:form id="indexForm">
+
+		<ui:include src="/lib/header.xhtml" />
+
+		<p:dataTable id="cars" selectionMode="single"
+			selection="#{welcomePageBean.selectedCar}" var="car"
+			value="#{welcomePageBean.carsList}" rowKey="#{car.carPlate} }">
+
+			<f:facet name="footer">
+				<p:commandButton process="cars" update=":indexForm:carDetail"
+					icon="ui-icon-search" value="View" oncomplete="carDialog.show()" />
+			</f:facet>
+
+			<p:column headerText="#{msg['car.carNickname']}">
+				<p:outputLabel value="#{car.carNickname}" />
+			</p:column>
+
+			<p:column headerText="#{msg['car.carPlate']}">
+				<p:outputLabel value="#{car.carPlate}" />
+			</p:column>
+
+			<p:column headerText="#{msg['car.carDestination']}">
+				<p:outputLabel value="#{car.carDestination}" />
+			</p:column>
+
+		</p:dataTable>
+
+		<p:dialog header="Car Info" widgetVar="carDialog" modal="true"
+			showEffect="fade" hideEffect="fade" resizable="false">
+			<p:outputPanel id="carDetail" style="text-align:center;">
+				<p:panelGrid columns="2">
+
+					<p:outputLabel value="#{msg['car.carNickname']}" />
+					<p:inputText size="50"
+						value="#{welcomePageBean.selectedCar.carNickname}" />
+
+					<p:outputLabel value="#{msg['car.carPlate']}" />
+					<p:inputText size="50"
+						value="#{welcomePageBean.selectedCar.carPlate}" />
+
+					<p:outputLabel value="#{msg['car.carDestination']}" />
+					<p:inputText size="50"
+						value="#{welcomePageBean.selectedCar.carDestination}" />
+
+					<p:outputLabel value="#{msg['car.carDestinationDetail']}" />
+					<p:inputTextarea style="width:500"
+						value="#{welcomePageBean.selectedCar.carDestinationDetail}" />
+
+					<p:outputLabel value="#{msg['car.carStation']}" />
+					<p:inputText size="50"
+						value="#{welcomePageBean.selectedCar.carStation}" />
+
+					<p:outputLabel value="#{msg['car.carStationDetail']}" />
+					<p:inputTextarea style="width:500"
+						value="#{welcomePageBean.selectedCar.carStationDetail}" />
+
+					<p:outputLabel value="#{msg['car.totalPassangerSeats']}" />
+					<p:inputText size="50"
+						value="#{welcomePageBean.selectedCar.totalPassangerSeats}" />
+
+					<p:outputLabel value="#{msg['car.currentTotalPassangers']}" />
+					<p:inputText disabled="true" size="50"
+						value="#{welcomePageBean.selectedCar.currentTotalPassangers}" />
+
+					<p:outputLabel value="#{msg['car.remainingSeats']}" />
+					<p:inputText disabled="true" size="50"
+						value="#{welcomePageBean.selectedCar.remainingSeats}" />
+
+					<p:outputLabel value="#{msg['car.carDepartureTime']}" />
+					<p:inputText size="50"
+						value="#{welcomePageBean.selectedCar.carDepartureTime}" />
+
+					<p:outputLabel value="#{msg['car.carEstimatedArrivalTime']}" />
+					<p:inputText size="50"
+						value="#{welcomePageBean.selectedCar.carEstimatedArrivalTime}" />
+
+					<p:outputLabel value="#{msg['car.creationDate']}" />
+					<h:outputText value="#{welcomePageBean.selectedCar.creationDate}">
+						<f:convertDateTime pattern="MM/dd/yyyy hh:mm a" />
+					</h:outputText>
+
+				</p:panelGrid>
+			</p:outputPanel>
+		</p:dialog>
+
+
+
+
+	</h:form>
+
+</h:body>
+</html>

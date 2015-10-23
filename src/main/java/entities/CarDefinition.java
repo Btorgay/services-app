@@ -89,8 +89,9 @@ public class CarDefinition implements Serializable{
 		remainingSeats = this.getRemainingSeats();
 		creationDate = new Date();
 	}
-
-
+	
+	public CarDefinition() {
+	}
 
 	public String getCarNickname() {
 		return carNickname;
