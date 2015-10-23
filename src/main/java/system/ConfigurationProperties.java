@@ -34,7 +34,7 @@ public class ConfigurationProperties {
 			String filename = "system/config.properties";
 			input = Bootstrap.class.getClassLoader().getResourceAsStream(filename);
 			if (input == null) {
-				logger.error("Sorry, unable to find " + filename);
+				logger.error("An error occured trying to find " + filename);
 				return;
 			}
 
@@ -45,13 +45,13 @@ public class ConfigurationProperties {
 			logger.debug("Application Name: " + prop.getProperty("Application.name"));
 
 		} catch (IOException ex) {
-			ex.printStackTrace();
+			logger.error("Error occured while loading config.property file");
 		} finally {
 			if (input != null) {
 				try {
 					input.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					logger.error("Error occured while closing config.property file");
 				}
 			}
 		}
