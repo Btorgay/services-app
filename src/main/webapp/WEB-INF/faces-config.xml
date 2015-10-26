@@ -13,4 +13,10 @@
 	   </resource-bundle>
      </application>
      
+ <!--     <factory>
+        <exception-handler-factory>
+            system.GenericExceptionHandlerFactory
+        </exception-handler-factory>
+	</factory> -->
+     
 </faces-config>

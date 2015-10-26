@@ -18,13 +18,14 @@ public class Bootstrap implements ServletContextListener {
 
 	@Override
 	public void contextInitialized(ServletContextEvent context) {
-		logger.info("----------");
-		logger.info("---------- Bootstrap:	SERVICES-APP STARTED SUCCESSFULLY ----------");
-		logger.info("----------");
 
 		logger.debug("Reading All System Configuration File ...");
 		ConfigurationProperties.getInstance().getProperties();
+		logger.debug("Reading process finished...");
 		
+		logger.info("----------");
+		logger.info("---------- Bootstrap:	SERVICES-APP STARTED SUCCESSFULLY ----------");
+		logger.info("----------");
 	}
 
 	@Override

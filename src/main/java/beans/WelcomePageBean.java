@@ -38,7 +38,9 @@ public class WelcomePageBean implements Serializable{
 		carDefinition2 = new CarDefinition("Car2", "34 TTT 1234", "Sarýyer");
 		carDefinition3 = new CarDefinition("Car3", "34 XXX 5555", "Maslak");
 		carDefinition4 = new CarDefinition("Car4", "34 KLM 1212", "Kocaeli/Merkez");
-		selectedCar = carDefinition;
+		
+		if(selectedCar == null)
+			selectedCar = carDefinition;
 		
 		carsList.add(carDefinition);
 		carsList.add(carDefinition2);
